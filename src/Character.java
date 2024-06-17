@@ -1,4 +1,17 @@
 public abstract class Character {
+    private String id;
+    private String name;
+    private int hp;
+    private boolean isAlive = true;
+
+    public Character(String id, String name, int hp, boolean isAlive) {
+        this.id = id;
+        this.name = name;
+        this.hp = hp;
+        this.isAlive = isAlive;
+    }
+}
+
     public String getId() {
         return id;
     }
@@ -28,13 +41,6 @@ public abstract class Character {
     }
 
     public void setAlive(boolean alive) {
-        isAlive = alive;private String id;
-private String name;
-private int hp;
-private boolean isAlive = true;
+        isAlive = alive;
 
-
-    public Character() {
-
-    }
 }
