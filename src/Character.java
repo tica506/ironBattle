@@ -2,15 +2,15 @@ public abstract class Character {
     private String id;
     private String name;
     private int hp;
-    private boolean isAlive = true;
+    private boolean isAlive;
 
-    public Character(String id, String name, int hp, boolean isAlive) {
+    public Character(String name, int hp) {
         this.id = id;
         this.name = name;
         this.hp = hp;
         this.isAlive = isAlive;
     }
-}
+
 
     public String getId() {
         return id;
@@ -43,4 +43,5 @@ public abstract class Character {
     public void setAlive(boolean alive) {
         isAlive = alive;
 
+    }
 }
