@@ -1,9 +1,8 @@
 public class Character {
-String id;
-String name;
-int hp;
-boolean isAlive = true;
-
+private String id;
+private String name;
+private int hp;
+private boolean isAlive = true;
 
 
 
