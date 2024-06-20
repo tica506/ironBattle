@@ -1,7 +1,33 @@
-public class Main {
+import java.util.Scanner;
+
+public class Main{
     public static void main(String[] args) {
-        System.out.println("bye world this is a test!");
-        int a = 17;
-        System.out.println("I am " + a + " years old");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter name for Warrior: ");
+        String warriorName = scanner.nextLine();
+        Warrior warrior = new Warrior(warriorName);
+
+        System.out.println("Enter name for Wizard: ");
+        String wizardName = scanner.nextLine();
+        Wizard wizard = new Wizard(wizardName);
+
+        System.out.println("\nBattle Start!");
+
+        while (warrior.isAlive() && wizard.isAlive()) {
+            System.out.println("\n" + warrior.getName() + " Hp: " + warrior.getHp() + ", Stamina: " + warrior.getStamina()) ;
+            System.out.println(wizard.getName() + " Hp: " + wizard.getHp() + ", Mana: " + wizard.getMana());
+
+            warrior.attack(wizard);
+            wizard.attack(warrior);
+
+        }
+
+        if (warrior.isAlive() && !wizard.isAlive()) {
+            System.out.println("\n" + warrior.getName() + " wins!");
+        } else if (!warrior.isAlive() && wizard.isAlive()) {
+            System.out.println("\n It is a tie! Restarting battle...\n");
+            main(args);
+        }
     }
 }

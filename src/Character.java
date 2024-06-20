@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public abstract class Character {
     private String id;
     private String name;
@@ -5,10 +7,14 @@ public abstract class Character {
     private boolean isAlive;
 
     public Character(String name, int hp) {
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.hp = hp;
-        this.isAlive = isAlive;
+        this.isAlive = true;
+    }
+
+    public Character() {
+
     }
 
 
